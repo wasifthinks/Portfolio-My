@@ -62,15 +62,15 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 to-gray-900/70 mix-blend-multiply" />
         <motion.div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://i.ibb.co/Qp1Gk1K/wasif-hero.jpg')",
-            filter: "brightness(0.8) contrast(1.1)"
-          }}
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5 }}
-        />
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/images/welcome-banner.jpg')",
+    filter: "brightness(0.8) contrast(1.1)"
+  }}
+  initial={{ scale: 1.1, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 1.5 }}
+/>
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
       </div>
 
