@@ -61,12 +61,12 @@ const Hero = () => {
       {/* Hero Background with Your Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 to-gray-900/70 mix-blend-multiply" />
-        import welcomeBanner from '../assets/welcome-banner.jpg'; // Adjust the path if needed
+        import welcomebanner from 'welcome-banner.jpg'; // Adjust the path if needed
 
 <motion.div
   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: `url(${welcomeBanner})`, // Use the imported image correctly
+    backgroundImage: `url(${welcomebanner})`, // Use the imported image correctly
     filter: "brightness(0.8) contrast(1.1)"
   }}
   initial={{ scale: 1.1, opacity: 0 }}
