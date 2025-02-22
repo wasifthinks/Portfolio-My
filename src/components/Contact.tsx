@@ -18,14 +18,14 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_1nan0yd',
+        'template_8tcwufl',
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY'
+        '1VhiAP0LG1F_aXTOQ'
       );
 
       toast.success('Message sent successfully!');
