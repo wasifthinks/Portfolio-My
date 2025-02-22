@@ -66,7 +66,7 @@ const Hero = () => {
           style={{
             backgroundImage:<img
                       src="welcome-banner.jpg"
-                      alt="Wasif",
+                      alt="Wasif"
             />
             filter: "brightness(0.8) contrast(1.1)"
           }}
