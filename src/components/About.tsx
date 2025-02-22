@@ -55,7 +55,7 @@ const About = () => {
                 <div className="w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-600/10 backdrop-blur-sm">
                   <div className="w-full h-full rounded-[2rem] overflow-hidden">
                     <img
-                      src="https://i.ibb.co/Qp1Gk1K/wasif-about.jpg"
+                      src="pixelcut-export (1).jpg"
                       alt="Wasif Azim"
                       className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-out"
                     />
