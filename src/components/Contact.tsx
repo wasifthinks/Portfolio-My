@@ -22,7 +22,7 @@ const Contact = () => {
         'template_8tcwufl',
         {
           from_name: formData.name,
-          from_email: formData.email,
+          email_id: formData.email,
           message: formData.message,
         },
         '1VhiAP0LG1F_aXTOQ'
