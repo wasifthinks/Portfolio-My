@@ -55,10 +55,10 @@ const About = () => {
                 <div className="w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-600/10 backdrop-blur-sm">
                   <div className="w-full h-full rounded-[2rem] overflow-hidden">
                     <img
-                      src="pixelcut-export (1).jpg"
-                      alt="Wasif Azim"
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-out"
-                    />
+  src="/image/pixelcut-export (1).jpg"
+  alt="Wasif Azim"
+  className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-out"
+/>
                   </div>
                 </div>
                 {/* Decorative Elements */}
