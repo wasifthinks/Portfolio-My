@@ -64,7 +64,7 @@ const Hero = () => {
         <motion.div
   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: "url('/image/welcome-banner.jpg')" "alt-Wasif Azim" ,
+    backgroundImage: "url('/image/welcome-banner.jpg')",
     
     filter: "brightness(0.8) contrast(1.1)"
   }}
