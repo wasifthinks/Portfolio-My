@@ -56,7 +56,7 @@ const About = () => {
                   <div className="w-full h-full rounded-[2rem] overflow-hidden">
                     <img
   src="/image/pixelcut-export (1).jpg"
-  alt="Wasif Azim"
+  alt="Wasif Azim Web Developer"
   className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700 ease-out"
 />
                   </div>
