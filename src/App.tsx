@@ -6,6 +6,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Education from './components/Education';
+import SmokeCursor from './components/SmokeCursor';
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div className="bg-gray-900 text-white relative">
+      <SmokeCursor />
       <nav className="fixed w-full bg-gray-900/80 backdrop-blur-sm z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
@@ -125,4 +127,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
