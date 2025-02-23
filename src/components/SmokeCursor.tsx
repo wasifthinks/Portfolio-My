@@ -3,16 +3,15 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const SmokeCursor = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   
-  const springConfig = { damping: 25, stiffness: 300 };
+  const springConfig = { damping: 15, stiffness: 150 };
   const smoothX = useSpring(cursorX, springConfig);
   const smoothY = useSpring(cursorY, springConfig);
 
   // Create multiple particles for the smoke effect
-  const particles = Array.from({ length: 8 });
+  const particles = Array.from({ length: 12 });
 
   useEffect(() => {
     // Check if it's a touch device
@@ -21,37 +20,22 @@ const SmokeCursor = () => {
     const handleMouseMove = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
-      setIsVisible(true);
     };
 
-    const handleTouchMove = (e: TouchEvent) => {
-      cursorX.set(e.touches[0].clientX);
-      cursorY.set(e.touches[0].clientY);
-      setIsVisible(true);
-    };
-
-    const handleTouchEnd = () => {
-      setIsVisible(false);
-    };
-
-    if (isTouchDevice) {
-      window.addEventListener('touchmove', handleTouchMove);
-      window.addEventListener('touchend', handleTouchEnd);
-    } else {
+    // Only add mouse event listener if it's not a touch device
+    if (!isTouchDevice) {
       window.addEventListener('mousemove', handleMouseMove);
     }
 
     return () => {
-      if (isTouchDevice) {
-        window.removeEventListener('touchmove', handleTouchMove);
-        window.removeEventListener('touchend', handleTouchEnd);
-      } else {
+      if (!isTouchDevice) {
         window.removeEventListener('mousemove', handleMouseMove);
       }
     };
   }, [isTouchDevice, cursorX, cursorY]);
 
-  if (!isVisible && isTouchDevice) return null;
+  // Don't render on touch devices
+  if (isTouchDevice) return null;
 
   return (
     <>
@@ -66,10 +50,10 @@ const SmokeCursor = () => {
         }}
       >
         <motion.div
-          className="w-8 h-8 rounded-full bg-white filter blur-sm"
+          className="w-10 h-10 rounded-full bg-white/30 filter blur-md"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.7, 0.3, 0.7],
+            scale: [1, 1.5, 1],
+            opacity: [0.8, 0.4, 0.8],
           }}
           transition={{
             duration: 2,
@@ -94,18 +78,19 @@ const SmokeCursor = () => {
           <motion.div
             className="absolute rounded-full"
             style={{
-              background: `hsl(${(index * 360) / particles.length}, 100%, 50%)`,
-              width: `${Math.random() * 20 + 10}px`,
-              height: `${Math.random() * 20 + 10}px`,
+              background: `hsla(${(index * 360) / particles.length}, 100%, 50%, 0.3)`,
+              width: `${Math.random() * 30 + 15}px`,
+              height: `${Math.random() * 30 + 15}px`,
+              filter: 'blur(8px)',
             }}
             animate={{
-              x: [0, (Math.random() - 0.5) * 50],
-              y: [0, (Math.random() - 0.5) * 50],
-              scale: [0.8, 0.1],
+              x: [0, (Math.random() - 0.5) * 100],
+              y: [0, (Math.random() - 0.5) * 100],
+              scale: [1, 0.2],
               opacity: [0.8, 0],
             }}
             transition={{
-              duration: 1 + Math.random(),
+              duration: 1.5 + Math.random(),
               repeat: Infinity,
               ease: "easeOut",
               delay: index * 0.1,
